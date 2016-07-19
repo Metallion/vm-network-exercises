@@ -44,7 +44,7 @@ This was an example of one hop. On a huge network like the internet, there will 
 
 Understanding the layers above 3 in detail is not so important for these exercises. We'll go over them quickly.
 
-When surfing to websites you may have seen a url like `http://192.168.0.10:80`. The http part is L7. We'll get to that. the :80 part is a TCP port and that's L4. The IP packets of L3 give us a way to get packets from point A to point B to in huge networks but it does nothing more. It does not allow multiple processes to listen on *ports* and does not provide any protection against data loss. On L4 there are 3 commonly used protocols.
+When surfing to websites you may have seen a url like `http://192.168.0.10:80`. The http part is L7. We'll get to that. The :80 part is a TCP port and that's L4. The IP packets of L3 give us a way to get packets from point A to point B to in huge networks but it does nothing more. It does not allow multiple processes to listen on *ports* and does not provide any protection against data loss. On L4 there are 3 commonly used protocols.
 
 * TCP: This protocol creates a connection between two IP Addresses and guarantees that data will arrive unchanged and in the right order. It has 65535 *ports* that processes can listen on. The above example of `http://192.168.0.10:80` makes a http call to TCP port `80` on IP address `192.168.0.10` TCP messages are referred to as *segments*
 
