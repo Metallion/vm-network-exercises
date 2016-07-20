@@ -19,7 +19,7 @@ qemu-system-x86_64 -m 1024 \
                    -cpu host \
                    -hda /path/to/vm/image \
                    -net nic,macaddr=52:54:00:12:34:70 \
-                   -net tap,script=ifup.sh,downscript=no
+                   -net tap,script=no,downscript=no
 ```
 
 * Both the above KVM command and the LXC setup in the OpenVNet installation guide will create a `tap0` interface on the host. This is a virtual network interface card that behaves exactly as a real NIC. You will see it using the `ip addr show` command and you can assign IP addresses to it using `ip addr add`. It is connected directly to the VM's eth0 NIC. This means it behaves as if there's a network cable with one end plugged into the VM's eth0 and the other end into the host's tap0.
