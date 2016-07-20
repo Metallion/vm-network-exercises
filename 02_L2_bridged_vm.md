@@ -26,7 +26,7 @@ This command does 2 things and it's a little confusing.
 
 One neat thing about the Linux bridge is that any NIC on the host can be turned into a port on the bridge.
 
-![Linux bridge with vm](images/02-2bridge_with_vm.png)
+![Linux bridge with vm](images/02-2_bridge_with_vm.png)
 
 Turn `tap0` to a bridge port using `brctl addif br0 tap0`. If things went right you should now see tap0 under interfaces when doing `brctl show br0`. Are you still able to ping the VM? If you still can, you did something wrong. :p
 

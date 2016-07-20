@@ -34,7 +34,7 @@ Because you can connect multiple L2 networks together through routing. Say we ha
 
 IP addresses allow us to put a router between these networks. They can allow 192.168.0.10 send an IP packet to 172.16.0.10 even though it's impossible for them to reach each other by MAC address.
 
-![router](images/01_router.png)
+![router](images/00_router.png)
 
 Let's say machine A has 192.168.0.10 while machine B has 172.16.0.10. When A sends a packet to B, A will first notice that 172.16.0.10 is in another subnet. It knows it can't reach that machine's MAC address so it will not even try to ARP request it. Instead the OS will check its *routing table*. In the routing table it says that 172.16.0.0/24 can be reached through a router located at 192.168.0.1. Machine A will do an ARP request for 192.168.0.1 and send its IP packet over there. Next, the router will check its own routing table. It sees that it has an interface directly connected to 172.16.0.0/24. It will send out an ARP request for 172.16.0.10 on there which machine B will reply. Now it can send the IP packet to machine B.
 
