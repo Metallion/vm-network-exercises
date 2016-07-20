@@ -1,4 +1,4 @@
-# Set up bridged networking for VMs
+# Set up a VM with an L1 connection to the host
 
 Requirements: A linux machine. This can be a VM.
 
