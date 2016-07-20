@@ -38,6 +38,8 @@ The reason why ping no longer works is because `tap0` is no longer a *NIC* on th
 
 * Make sure that any NICs or ports you're using are up. If for example `ip addr show br0` shows *state DOWN*, bring it up using `ip link set br0 up`. Make sure all NICs/ports you expect to use are up.
 
-**Assignment**: Add a second VM to the bridge.
+**Assignment**: Add a second VM to the bridge. The host and the two VMs should all be able to ping each other.
 
-**Extra assignment**: Assuming the VM host has an IP address on its `eth0` NIC that it got through DHCP, how could the VM get an IP address from DHCP as well?
+![Linux bridge two vm](images/02-3_bridge_two_vms.png)
+
+**Extra assignment**: Assuming the VM host has an IP address on its `eth0` NIC that it got through DHCP, how could the VMs get an IP address from DHCP as well? Remember that a Bridge essentially broadcasts all traffic to all its ports and that any NIC (except for wifi NICs like wlan0) on the host can be turned into a port. 
