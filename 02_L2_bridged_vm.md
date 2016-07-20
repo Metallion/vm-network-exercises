@@ -38,6 +38,8 @@ The reason why ping no longer works is because `tap0` is no longer a *NIC* on th
 
 * Make sure that any NICs or ports you're using are up. If for example `ip addr show br0` shows *state DOWN*, bring it up using `ip link set br0 up`. Make sure all NICs/ports you expect to use are up.
 
+* You can use a tool like `tcpdump` to display all the traffic coming through a NIC or a port. For example `tcpdump -i tap0` will show you everything that passes through `tap0`. It's a very useful too for debugging networks setups.
+
 **Assignment**: Add a second VM to the bridge. The host and the two VMs should all be able to ping each other.
 
 ![Linux bridge two vm](images/02-3_bridge_two_vms.png)
