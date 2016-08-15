@@ -22,6 +22,35 @@ qemu-system-x86_64 -m 1024 \
                    -net tap,script=no,downscript=no
 ```
 
+* Here's an example LXC command
+
+```
+# Install LXC
+yum -y install lxc lxc-templates
+
+# Mount cgroups
+mkdir /cgroup
+echo "cgroup /cgroup cgroup defaults 0 0" >> /etc/fstab
+mount /cgroup
+
+# lxc-create -t centos -n inst1
+```
+
+Now open the file `/var/lib/lxc/inst1/config`
+
+```
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.veth.pair = inst1
+lxc.network.hwaddr = 10:54:FF:00:00:01
+lxc.rootfs = /var/lib/lxc/inst1/rootfs
+lxc.include = /usr/share/lxc/config/centos.common.conf
+lxc.arch = x86_64
+lxc.utsname = inst1
+lxc.autodev = 0
+```
+
+
 * Both the above KVM command and the LXC setup in the OpenVNet installation guide will create a `tap0` interface on the host. This is a virtual network interface card that behaves exactly as a real NIC. You will see it using the `ip addr show` command and you can assign IP addresses to it using `ip addr add`. It is connected directly to the VM's eth0 NIC. This means it behaves as if there's a network cable with one end plugged into the VM's eth0 and the other end into the host's tap0.
 
 * While you can technically do the same thing with Oracle's virtualbox, I do not recommend it for this example. Vbox uses its own bridging and we will use the Linux bridge to set up bridged networking ourself in the next examples.
