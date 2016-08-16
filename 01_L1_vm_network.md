@@ -41,7 +41,7 @@ Now open the file `/var/lib/lxc/inst1/config`
 ```
 lxc.network.type = veth
 lxc.network.flags = up
-lxc.network.veth.pair = inst1
+lxc.network.veth.pair = tap0
 lxc.network.hwaddr = 10:54:FF:00:00:01
 lxc.rootfs = /var/lib/lxc/inst1/rootfs
 lxc.include = /usr/share/lxc/config/centos.common.conf
