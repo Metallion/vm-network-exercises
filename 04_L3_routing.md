@@ -8,7 +8,7 @@ By this point you should have a firm grasp of setting up VMs and attaching them 
 
 We are going to take the result of the [previous exercise](03_multiple_hosts_vms_and_bridges.md), put the 4 VMs in two different subnets and then set up a third host to act as a router.
 
-[Router](images/04-01-router.png)
+[Router](images/04-1-router.png)
 
 VM1, VM2 and the router will be together in subnet `10.0.0.0/24`
 
