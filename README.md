@@ -15,3 +15,5 @@ These exercises will let you take that theory and put it in practice.
 * [Ex 1: L1 connection between VM and Host](01_L1_vm_network.md)
 
 * [Ex 2: L2 bridged networking](02_L2_bridged_vm.md)
+
+* [Ex 3: L2 with multiple bridges, hosts and VMs](03_multiple_hosts_vms_and_bridges.md)
