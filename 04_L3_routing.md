@@ -8,15 +8,21 @@ By this point you should have a firm grasp of setting up VMs and attaching them 
 
 We are going to take the result of the [previous exercise](03_multiple_hosts_vms_and_bridges.md), put the 4 VMs in two different subnets and then set up a third host to act as a router.
 
-[Router](images/04-1-router.png)
+![Router](images/04-1-router.png)
 
 VM1, VM2 and the router will be together in subnet `10.0.0.0/24`
 
-VM1: 10.0.0.10
-VM2: 10.0.0.11
-Router: 10.0.0.1
+* VM1: 10.0.0.10
+* VM2: 10.0.0.11
+* Router: 10.0.0.1
 
 VM3, VM4 and the router will be together in subnet `192.168.0.1/24`
+
+* VM3: 192.168.0.10
+* VM4: 192.168.0.11
+* Router: 192.168.0.1
+
+All 4 VMs should be able to ping each other.
 
 #### Tips
 
@@ -35,3 +41,5 @@ sysctl -w net.ipv4.ip_forward=1
 ```
 
 To make the change persistent after reboot, open the file `/etc/sysctl.conf` and set it to 1 in there.
+
+* If things don't work as expected, look at the picture and ask yourself which path you expect network traffic to take through the topology. Then use `tcpdump` to check each NIC and port one by one. That way you can see at exactly what point things go wrong.
