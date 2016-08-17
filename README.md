@@ -17,3 +17,5 @@ These exercises will let you take that theory and put it in practice.
 * [Ex 2: L2 bridged networking](02_L2_bridged_vm.md)
 
 * [Ex 3: L2 with multiple bridges, hosts and VMs](03_multiple_hosts_vms_and_bridges.md)
+
+* [Ex 4: L3 routing](04_L3_routing.md)
