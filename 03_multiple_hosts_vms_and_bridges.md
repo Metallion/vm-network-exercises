@@ -16,4 +16,6 @@ Remember that a bridge is an L2 device that receives an Ethernet frame on one po
 
   Tip: If you are using a VM with NAT networking, there is no need to remove it. You can just add a second NIC to your VM that uses bridged networking instead.
 
-* IF your VM hosts are physical machines, you will need to connect them to either a physical bridge or you could connect them together directly using a cable.
+* If your VM hosts are physical machines, you will need to connect them to either a physical bridge or you could connect them together directly using a cable.
+
+* If your VM hosts are KVM machines on a Linux system, you can set up bridged networking manually in the exact same way you did it in the last exercise.
